@@ -1,0 +1,37 @@
+{% extends 'Home.html'  %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Početna strana-Postovi</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/BlogPost.css' %}">
+</head>
+<body>
+		<div id="title">
+			<h1>Vaše priče:</h1>
+		</div>
+	{% for post in object_list %}
+	{% if post.status == 0 %}
+		<div id="post">
+			<h2>{{ post.naslov }}</h2>
+			<ul>
+				{% if user.is_authenticated %}
+				{% if user.id == post.autor.id %}
+				<li class="opcije"><a href="{% url 'Obrisi' post.pk %}">Obriši post</a><a href="{% url 'Edit' post.pk %}">Izmijeni post</a></li>
+				{% endif %}
+				{% endif %}
+				<li>Objavljeno: {{ post.vrijeme }}</li>
+				<li>Autor: {{ post.korisnicko_ime }}</li>
+				<li class="opis_teksta"><i>{{ post.opis_teksta }}</i></li>
+			</ul>
+			<div id="button">
+				<button><a href="{% url 'Artikal' post.pk %}">Pročitaj još</a></button>
+			</div>
+		</div>
+	{% endif %}
+	{% endfor %}
+</body>
+</html>
+{% endblock content %}

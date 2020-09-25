@@ -1,0 +1,65 @@
+{% extends "Home.html" %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registracija!</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/ForumRegistracijaPage.css' %}">
+</head>
+<body>
+		<div id="title">
+			<h1>Registracija</h1>
+		</div>
+		<div id="form-control">
+			<form method="POST">
+				{% csrf_token %}
+				<p>
+					<label for="id_first_name">Vaše ime:</label><br> 
+					<input type="text" name="first_name" class="form-control" maxlength="100" required id="id_first_name">
+				</p>
+				<p>
+					<label for="id_last_name">Vaše prezime:</label><br> 
+					<input type="text" name="last_name" class="form-control" maxlength="100" required id="id_last_name">
+				</p>
+				<p>
+					<label for="id_username">Korisničko ime:</label><br> 
+					<input type="text" name="username" maxlength="150" autofocus required id="id_username"> 
+				</p>
+				<p>
+					<label for="id_email">E-mail:</label><br> 
+					<input type="email" name="email" class="form-control" required id="id_email">
+				</p>
+				<p>
+					<label for="id_password1">Lozinka:</label><br> 
+					<input type="password" name="password1" autocomplete="new-password" required id="id_password1"> 
+					<div id="helptext">
+						<span>
+							<ul>
+								<li><i>Vaša lozinka ne može da sadrži vaše lične podatke.</i></li>
+								<li><i>Vaša lozinka se mora sastojati najmanje od osam znakova.</i></li>
+								<li><i>Vaša lozinka ne može biti uobičajeno korištena lozinka.</i></li>
+								<li><i>Vaša lozinka ne može biti samo numerička.</i></li>
+							</ul>
+						</span>
+					</div>
+				</p><br>
+				<p>
+					<label for="id_password2">Potvrdi lozinku:</label><br> 
+					<input type="password" name="password2" autocomplete="new-password" required id="id_password2"><br>
+					<div id="helptext2">
+						<span class="helptext"><i>
+							Unesite lozinku još jednom radi identifikacije.
+						</i></span>
+					</div>
+				</p>
+				<div id="submit">
+					<button type="submit">Registracija!</button>
+				</div>
+			</form>
+		</div>
+</body>
+</html>
+
+{% endblock content %}

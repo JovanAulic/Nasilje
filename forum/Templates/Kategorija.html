@@ -1,0 +1,26 @@
+{% extends 'Home.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kategorija</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/Kategorija.css' %}">
+</head>
+<body>
+	<div id="title">
+		<h1>Postovi u kategoriju "{{ cats }}" nasilje</h1>
+	</div>
+	<div id="form-group">
+	{% for post in category_post %}
+		<div class="form">
+			<h2><a href="{% url 'Artikal' post.pk %}">{{ post.naslov }}</a></h2>
+			<h3>Autor: {{ post.korisnicko_ime }}</h3>
+			<h4><i>{{ post.opis_teksta }}</i></h4>
+		</div>
+	{% endfor %}
+	</div>
+</body>
+</html>
+{% endblock content %}

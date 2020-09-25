@@ -1,0 +1,55 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Garamond', sans-serif;
+}
+#artikal h1{
+	font-size: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-family: "Impact";
+}
+#artikal p.opis_teksta{
+	font-size: 30px;
+	text-align: center;
+	color: gray;
+	text-shadow: 1px 1px black;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid gray;
+}
+#artikal p.tekst{
+	padding-top: 20px;
+	font-size: 25px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+#artikal ul{
+	list-style-type: none;
+	float: right;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#artikal ul li{
+	font-size: 20px;
+}
+#artikal ul li a{
+	text-decoration: none;
+	color: #4d140c;
+	padding: 5px;
+}
+#artikal ul li a:hover{
+	color: silver;
+
+
+
+
+
+
+
+

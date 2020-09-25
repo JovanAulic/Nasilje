@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Početna stranica</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/KontaktPage.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<nav>
+				<h1>Ljubav ili <span>Nasilje</span></h1>
+				<ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}" class="active">Kontakt</a></li>
+					<li><a href="{% url 'Postovi' %}">Forum</a></li>
+					{% else %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}" class="active">Kontakt</a></li>
+					<li><a href="{% url 'Forum' %}">Forum</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+	</div>

@@ -1,0 +1,73 @@
+{% extends "Home.html" %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+{% if user.id == post.autor.id %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Obriši artikal
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/delete.css' %}">
+</head>
+<body>	
+	<div id="form-group">
+		<form method="POST">
+			{% csrf_token %}
+			<div id="title">
+				<h1>Da li želite obrisati post "{{ post.naslov }}"?</h1>
+			</div>
+			<div class="describe">
+				<ul>
+					<li>Naslov: {{ post.naslov }}</li>
+					<li>Korisnicko ime: {{ post.korisnicko_ime }}</li>
+					<li>{{ post.vrijeme }}</li>
+					<li class="opis_teksta">Opis teksta: {{ post.opis_teksta }}</li>
+				</ul>
+			</div>
+			<script type="text/javascript">
+	      		function funkcija() {
+	      			alert("Da li ste sigurni da želite obrisati post {{ post.naslov }}?");
+	      		}
+	     	</script>
+			<div class="button">
+				<button type="submit" onclick="funkcija()">Obriši!</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+	{% else %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Greška</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'CSS/Identifikacija.css' %}">
+	</head>
+	<body>
+		<div id="else1">
+			<h1>Vaše korisničko ime se ne poklapa sa imenom autora! Nemate mogućnost brisanja sadržaja.</h1>
+		</div>
+	</body>
+	</html>
+	{% endif %}
+	
+{% else %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Greška</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'CSS/else.css' %}">	
+	</head>
+	<body>
+		<div id="else">
+			<h1>Niste prijavljeni. Nemate mogućnost brisanja sadržaja!</h1>
+		</div>
+	</body>
+	</html>
+{% endif %}
+{% endblock content %}

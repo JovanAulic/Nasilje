@@ -1,0 +1,36 @@
+{% extends 'Home.html'  %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/Artikal.css' %}">
+</head>
+<body>
+	<div id="artikal">
+		<h1>{{ post.naslov }}</h1>
+		<p class="opis_teksta"><i>
+			{{post.opis_teksta}}
+		</i></p>
+		<p class="tekst">
+			{{ post.tekst }}
+		</p>
+		<ul>
+			{% if user.is_authenticated %}
+			{% if user.id == post.autor.id %}
+			<li><a href="{% url 'Obrisi' post.pk %}">Obriši post</a><a href="{% url 'Edit' post.pk %}">Izmijeni post</a></li>
+			{% endif %}
+			{% endif %}
+			<li>Autor: {{ post.korisnicko_ime }}</li>
+			<li>Kategorija:<a href="{% url 'Kategorija' post.kategorija|slugify %}">{{ post.kategorija }}</a></li>
+			<li>{{ post.vrijeme }}</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>
+
+{% endblock %}

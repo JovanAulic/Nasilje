@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Garamond', sans-serif;
+}
+#title h1{
+	font-size: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 2px 2px silver;
+	color: #4d140c;
+	font-family: "Impact";
+	margin-left: 50px;
+	margin-right: 50px;
+	border-bottom: 1px solid gray;
+}
+#form-group{
+	margin-right: 40px;
+	margin-left: 40px;
+}
+#form-group .form{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-size: 25px;
+	text-align: center;
+	box-shadow: 10px 5px 2px gray;
+}
+#form-group .button{
+	text-align: right;
+	padding-top: 25px;
+	padding-bottom: 20px;
+	margin-right: 30px;
+}
+#form-group .button button{
+	border: 2px groove black;
+	border-radius: 20px;
+	box-shadow: 5px 5px gray;
+	background-color: #4d140c;
+	padding: 2px;
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+}
+#form-group .button button:hover{
+	background-color: silver;
+	color: black;
+}

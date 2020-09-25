@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Početna stranica</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/ForumPage.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<nav>
+				<h1>Ljubav ili <span>Nasilje</span></h1>
+				<ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Postovi' %}" class="active">Forum</a></li>
+					{% else %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Forum' %}" class="active">Forum</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+		<div id="User-menu">
+			<h1>
+				Podijeli svoju priču!
+			</h1>
+			<p>
+				<i>
+				<span class="Pasus">Postani</span> član grupe aktivista <span>"<b>Ljubav ili </b></span><span class="Nasilje"><b>Nasilje</b>"</span> pritiskom na Registracija. 
+				Ako već jeste naš član, prijavi se i pogledaj nove sadržaje!
+				</i>
+			</p>
+			<ul>
+				<li>
+					<button><a href="{% url 'login' %}"><b>Prijavi se</b></a></button>
+				</li>
+				<li>
+					<button><a href="{% url 'Registracija' %}"><b>Registruj se</b></a></button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

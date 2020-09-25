@@ -1,0 +1,251 @@
+*{
+	font-family: 'Garamond', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #bab095;
+}
+#container{
+	width: 960px;
+	margin: 0 auto;
+}
+#header{
+	padding-bottom: 30px;
+}
+#header nav h1{
+	color: #4d140c;
+	font-size: 50px;
+	text-align: center;
+}
+#header nav h1 span{
+	font-size: 50px;
+	color: black;
+	text-shadow: 1px 1px gray;
+}
+#header nav ul{
+	text-align: center;
+	list-style-type: none;
+	border-radius: 20px;
+}
+#header nav ul li{
+	display: inline-block;
+}
+#header nav ul li a{
+	font-size: 30px;
+	padding: 5px;
+	text-decoration: none;
+	color: #4d140c;
+}
+#header nav ul li a:hover{
+	color: gray;
+	text-shadow: 1px 1px black; 
+}
+#header nav ul li a.active{
+	color: snow;
+	text-shadow: 1px 1px black;
+}
+#primary{
+	border: 1px solid black;
+	border-radius: 20px;
+	padding-top: 10px;
+	float: left;
+	width: 222.5px;
+	margin-right: 7px;
+	background-color: snow;
+	text-align: center;
+}
+#content{
+	border-radius: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	float: left;
+	width: 477px;
+	border: 1px solid black;
+	background-color: snow;
+}
+#secondary{
+	border-radius: 20px;
+	border: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	float: left;
+	width: 222.5px;
+	margin-left: 7px;
+	background-color: snow; 
+}
+#content h1{
+	padding-top: 20px;
+	font-size: 40px;
+	text-shadow: 2px 2px silver;
+	font-family: "Impact";
+	color: #4d140c;
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid gray;
+}
+#content .Describe{
+	padding-top: 5px;
+	font-size: 30px;
+	text-align: justify;
+	margin-left: 15px;
+	margin-right: 15px;
+	color: gray;
+	text-shadow: 1px 1px black;
+}
+#content .Describe span{
+	padding-left: 40px;
+}
+#content .Image{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 36.5px;
+	padding-right: 36.5px;
+}
+#content .Image img{
+	width: 397px;
+	border-radius: 20px;
+}
+#Seksualno{
+	float: left;
+	width: 150px;
+	margin-left: 3px;
+	padding-bottom: 20px;
+}
+#Seksualno h2{
+	margin-right: 10px;
+	text-align: center;
+	font-size: 25px;
+	font-family: "Impact";
+	text-shadow: 2px 2px silver;
+	color: #4d140c;
+	padding-bottom: 5px;
+	border-bottom: 1px solid gray;
+}
+#Seksualno p{
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: justify left;
+}
+#Fizicko{
+	float: left;
+	width: 150px;
+	margin-right: 3px;
+	padding-bottom: 20px;
+}
+#Fizicko h2{
+	border-bottom: 1px solid gray;
+	padding-bottom: 5px;
+	text-align: center;
+	font-size: 25px;
+	font-family: "Impact";
+	color: #4d140c;
+	text-shadow: 2px 2px silver;
+}
+#Fizicko p{
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: justify left;
+}
+#Verbalno{
+	float: left;
+	width: 150px;
+	margin-left: 10.5px;
+	margin-right: 10.5px;
+	padding-bottom: 20px;
+}
+#Verbalno h2{
+	margin-left: 2px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid gray;
+	text-align: center;
+	font-size: 25px;
+	font-family: "Impact";
+	color: #4d140c;
+	text-shadow: 2px 2px silver;
+}
+#Verbalno p{
+	padding-top: 5px;
+	font-size: 20px;
+	text-align: justify left;
+}
+#secondary h1{
+	padding-top: 20px;
+	font-family: "Impact";
+	color: #4d140c;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 2px 2px silver;
+}
+#secondary p.Describe{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+}
+#secondary h3{
+	font-size: 30px;
+	text-align: center;
+	font-family: "Impact";
+	padding-bottom: 10px;
+	text-shadow: 2px 2px silver;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#Linkovi h4{
+	text-align: center;
+	font-size: 30px;
+}
+#Linkovi{
+	background-color: snow;
+	width: 142px;
+	border: 1px solid #4d140c;
+	border-radius: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+#Linkovi ul{
+	text-align: justify left;
+	list-style-type: none;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+#Linkovi ul li a{
+	text-decoration: none;
+	font-size: 30px;
+	color: #4d140c;
+}
+#Linkovi ul li a:hover{
+	color: gray;
+}
+#primary h1{
+	padding-top: 20px;
+	font-family: "Impact";
+	color: #4d140c;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 2px 2px silver;
+}
+#primary ul{
+	list-style-type: none;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+#primary ul li{
+	font-size: 30px;
+	text-decoration: none;
+	padding: 2px;
+}
+#footer{
+	clear: both;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

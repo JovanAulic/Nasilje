@@ -1,0 +1,81 @@
+{% extends "Home.html" %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dodaj Novu Priču!</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/NewPost.css' %}">
+</head>
+<body>
+		<div id="title">
+			<h1>Napiši svoju priču!</h1>
+		</div>
+		<div id="describe">
+			<h2><i>
+			<span>Nemoj</span> više da ćutiš, olakšaj sebi i pokaži drugima kakve životne rane nosiš na sebi. Nisi jedini! Možda tvoja priča pomogne drugima da se lakše osjećaš.
+			</i></h2>
+		</div>
+		<div id="form-group">
+			<form method="POST">
+				{% csrf_token %}
+				<p>
+					<label for="id_naslov">Naslov Vaše priče:</label><br>
+					<input type="text" name="naslov" class="form-group" placeholder="Napiši naslov!" maxlength="100" required id="id_naslov">
+				</p>
+				<p>
+					<label for="id_kategorija">Izaberi Kategoriju :</label><br>
+					{{ form.kategorija }}
+					</select>
+				</p>
+				<p>
+					<label for="id_autor">Autor: </label><br>
+					{{ form.autor }}
+				</p>
+				<p><i>
+					U svrhu identifikacije izaberite Vaše pravo korisničko ime, u suprotnom nećete biti u mogućnosti da mijenjate i brišete sadržaj Vašeg teksta.
+				</i></p>
+				<p>
+					<label for="id_opis_teksta">Opis priče:</label><br>
+					{{ form.opis_teksta }}
+				</p>
+				<p>
+					<label for="id_tekst">Vaša priča: </label><br>
+					{{ form.tekst }}
+				</p>
+				{{ form.korisnicko_ime }}
+				<script >
+  					var korisnicko_ime = "{{ user.username }}";
+  					document.getElementById("nickname").value
+ 			 		= korisnicko_ime;
+ 			 	</script>
+ 			 	<script type="text/javascript">
+ 			 		function funkcija(){
+ 			 			alert("Da li ste sigurni da želite objaviti Vašu priču?");
+ 			 		}
+ 			 	</script>
+ 			 	<div class="button">
+ 			 		<button type="submit" onclick="funkcija()">Objavi!</button>
+ 			 	</div>
+			</form>			
+		</div>
+</body>
+</html>
+{% else %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Greška</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'CSS/else.css' %}">	
+	</head>
+	<body>
+		<div id="else">
+			<h1>Niste prijavljeni. Nemate mogućnost dodavanja sadržaja!</h1>
+		</div>
+	</body>
+	</html>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Početna stranica</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/home.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<nav>
+				<h1>Ljubav ili <span>Nasilje</span></h1>
+				<ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Postovi' %}" class="active">Forum</a></li>
+					{% else %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Forum' %}" class="active">Forum</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+		<div id="content">
+			{% block content %}
+
+			{% endblock content %}
+		</div>
+		<div id="menu">
+			<h2>Korisnički meni:</h2>
+			<ul>
+			{% if user.is_authenticated %}
+				<li><a href="{% url 'Postovi' %}"><i>Postovi</i></a></li>
+				<li><a href="{% url 'NoviPost' %}"><i>Dodaj Novu Priču</i></a></li>
+				<li><a href="{% url 'Prijava' %}"><i>Prijava nasilja</i></a></li>
+				<li><a href="{% url 'logout' %}"><i>Odjavi se</i></a></li>
+			{% else %}
+				<li><a href="{% url 'Postovi' %}"><i>Postovi</i></a></li>
+				<li><a href="{% url 'Prijava' %}"><i>Prijava nasilja</i></a></li>
+				<li><a href="{% url 'login' %}"><i>Prijavi se</i></a></li>
+				<li><a href="{% url 'Registracija' %}"><i>Registruj se</i></a></li>
+			{% endif %}
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

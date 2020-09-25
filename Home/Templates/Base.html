@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Početna stranica</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/MainPage.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<nav>
+				<h1>Ljubav ili <span>Nasilje</span></h1>
+				<ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'Base' %}" class="active">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Postovi' %}">Forum</a></li>
+					{% else %}
+					<li><a href="{% url 'Base' %}" class="active">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Forum' %}">Forum</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+		<div id="primary">
+			<h1>Zašto reći "Dosta"!?</h1>
+			<ul>
+				<li>
+					Voli i poštuj sebe!
+				</li>
+				<li>
+					Nisi ničije vlasništvo!
+				</li>
+				<li>
+					Imaš pravo na normalan život.
+				</li>
+				<li>
+					Sačuvaj svoje zdravlje!
+				</li>
+			</ul>
+			<div class="Content2-1">
+				<h1>Šta ako nastavite..?</h1>
+				<ul>
+					<li>
+						Loše fizičko zdravlje
+					</li>
+					<li>
+					Problemi sa duševnim stanjem
+					</li>
+					<li>
+						Problematičan društeni život
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="content">
+			<h1>Nije sramota priznati neke stvari, sramota je ćutiti i trpiti!?</h1>
+			<p class="Describe"><i><span>Godinama</span> unazad muškarci, žene i djeca su žrtve nasilje. Često isti teško otvaraju dušu drugim ljudima, da li zbog straha ili zbog stida? Ovaj sajt napravljen je sa ciljom da tim istim žrtvama nasilja, omogući da pod pseudonimom kažu sve ono za šta nemaju hrabrosti pod vlastitim imenom ili prezimenom.</i></p>
+			<div class="Image">
+				<img src="{% static 'Slike/stop.jpeg' %}" alt="Nasilje slika">
+			</div>
+			<div id="Verbalno">
+			<h2>Seksualno</h2>
+			<p>
+				<span style="padding-left: 30px;">Seksualno</span> nasilje u najvećoj mjeri obuhvata nasilje nad djecom i ženama, nešto rijeđe na muškarcima
+			</p>
+		</div>
+		<div id="Fizicko">
+			<h2>Verbalno</h1>
+				<p>
+					<span style="padding-left: 30px;">Verbalno</span> nasilje predstavlja jedan od najčešćih vidova nasilja. Prisutno je svuda, a prepoznaje se na način kad osoba verbalnim putem govori pogrdne riječi, prijetnje ili ucjene drugom licu.
+				</p>
+		</div>
+		<div id="Seksualno">
+			<h2>Fizicko</h2>
+			<p>
+				<span style="padding-left: 30px;">Fizičko</span> nasilje je nažalost sve učestalije. Nastaje kada napadač putem sile želi ispuniti svoje prohtjeve nad određenim licem. Postalo je veoma rasprostranjeno u svim zajednicama, bilo da je riječ o bračnim ili vanbračnim, školskim ili slično..
+			</p>
+		</div>
+		</div>
+		<div id="secondary">
+			<h1>Ako ste bivša žrtva nasilja!</h1>	
+			<p class="Describe"><i><b>Ukoliko želite podijeliti Vaša iskustva sa nama kako ste uspješno prevazišli probleme, možete to uraditi preko našeg foruma.</b></i> </p>
+			<h3><bold>Možda Vaša priča nekome bude inspiracija i da snage za dalje!</bold></h3>
+			<div id="Linkovi">
+				<h4>Postani član!</h4>
+				<ul>
+					<li>
+						<a href="{% url 'Registracija' %}"><i><b>Registruj se</b></i></a>
+					</li>
+					<li>
+						<a href="{% url 'login' %}"><i><b>Prijavi se</b></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Copyright &copy Jovan Aulić 2020.</p>
+		</div>
+	</div>
+
+</body>
+</html>

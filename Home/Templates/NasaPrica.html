@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Naša priča</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/NašaPriča.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<nav>
+				<h1>Ljubav ili <span>Nasilje</span></h1>
+				<ul>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}" class="active">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Postovi' %}">Forum</a></li>
+					{% else %}
+					<li><a href="{% url 'Base' %}">Početna stranica</a></li>
+					<li><a href="{% url 'Nasa_prica' %}" class="active">Naša priča</a></li>
+					<li><a href="{% url 'Kontakt' %}">Kontakt</a></li>
+					<li><a href="{% url 'Forum' %}">Forum</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		</div>
+		<div id="text">
+			<h1>Naša priča</h1>
+			<p class="describe"><i>
+				<span>Koliko</span> puta smo pročitali sadržaje poput "Danima je držao zatvorenu ženu", "Vršnjačko nasilje u školi", "Došlo je do porodičnog nasilja u mjestu.." i mnogi drugi. Upravo ovi naslovi koji se sve češće spominju u različitim sredstvima javnog informisanja podstakli su me da omogućim i dam doprinos ljudima koji su bivše ili trenutne žrtve zlostavljanja mogućnost da anonimno, pod određenim pseudonimom, ispričaju svoju priču. Veliki je broj razloga zašto ove žrtve ne žele da govore javno o ovome, neki od njih su strah, sram ili grižnja savjest.
+			</i></p>
+			<img src="{% static 'Slike/stop1.jpeg' %}" alt="Nasilje nad ženama">
+			<div class="story">
+				<h2>Male priče Velikih ljudi</h2>
+				<p>
+					<span>Kažu</span> da koliko god provedeš vremena sa nekim nikad ne možeš da ga do kraja upoznaš. Ljudi teško otvaraju dušu o nekim privatnim stvarima iz razloga što će ih drugi žaliti, podsmijehivati ili biti predmet ogovaranja. Oni koji znaju o čemu je riječ iz okoline će prijeći preko toga jer je teško reći istinu u licu ili posavjetovati nekoga bez da taj neko traži pomoć. Danas je vrijeme socijalnih medija, interneta i informacije putuju brže nego ikada. Moje mišljenje je da treba omogućiti ljudima da kažu pravu istinu o njihovom životu iza lažnog imena. Upravo ova stranica im to omogućava.
+				</p>
+			</div>
+			<div class="stop">
+				<h2>Stop nasilju</h2>
+				<p>
+					<span>Nasilje</span> premda trenutno živimo u modernom i demokratskom društvu postalo je zastupljeno u svim sferama i grupama. Više ovdje nije riječ samo o zlostavljanju odraslih nego i mladih. Kako možemo da utičemo na razmišljanje ljudi? Odgovor je kroz priču, kako ljudi sve više budu davali interesovanja prema ovoj temi ona će sve više postati aktuelna i kroz čitanje različitih priča vjerovatno će podsvjesno uticati na razmišljanje i smanjiti nove slučajeve.
+				</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

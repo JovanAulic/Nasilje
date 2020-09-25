@@ -1,0 +1,94 @@
+{% extends 'Home.html'  %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prijava nasilja</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/PrijavaNasilja.css' %}">
+</head>
+<body>
+	<div id="title">
+		<h1> 
+			Prijavi nasilje
+		</h1>
+	</div>
+	<div id="describe">
+		<h2>
+			<i>
+			Pomozi sebi i drugima. Unesite podatke i prijavi nasilje. Dobijene podatke ćemo dalje proslijediti nadležnim službama. Svi podaci ostaju anonimni</i>
+		</h2>
+	</div>
+	<div id="form-group">
+		<form method="POST">
+			{% csrf_token %}
+			<p>
+				<label for="id_ime">Ime:</label><br> 
+				<input type="text" name="ime" class="form-control" placeholder="Unesite Vaše ime" maxlength="30" required id="id_ime">
+			</p>
+			<p>
+				<label for="id_prezime">Prezime:</label><br> 
+				<input type="text" name="prezime"  class="form-control" placeholder="Unesite Vaše prezime" maxlength="50" required id="id_prezime">
+			</p>
+			<p>
+				<label for="id_jedinstveni_maticni_broj">Jedinstveni maticni broj:</label><br> 
+				<input type="text" name="jedinstveni_maticni_broj" class="form-control" maxlength="13"  placeholder="Jedinsteni matični broj" required id="id_jedinstveni_maticni_broj">
+			</p>
+			<p>
+				<label for="id_vrsta_nasilja">Vrsta nasilja:</label><br> 
+				<select name="vrsta_nasilja" class="form-control" placeholder="Odaberite vrstu nasilja" maxlength="20" id="id_vrsta_nasilja">
+					<option value="Seksualno">Seksualno nasilje</option>
+					<option value="Fizičko">Fizičko nasilje</option>
+					<option value="Verbalno">Verbalno nasilje</option>
+					<option value="Ucjena">Ucjena</option>
+					<option value="Porodično">Porodično nasilje</option>
+					<option value="Drugo">Drugo</option>
+				</select>
+			</p>
+			<p>
+				<label for="id_objekat">Objekat:</label><br> 
+				<select name="objekat" class="form-control" placeholder="Izaberite pol" maxlength="20" id="id_objekat">
+					<option value="Žrtva">Žrtva nasilja</option>
+					<option value="Posmatrač">Posmatrač</option>
+					<option value="Učesnik">Učesnik u događaju</option>
+					<option value="Drugo">Drugo</option>
+				</select>
+			</p>
+			<div id="helptext">
+				<span>
+					<ul>
+						<li><i>Ukoliko ste žrtva nasilja unosite Vaše podatke.</i></li>
+						<li><i>Ukoliko pripadate drugoj kategoriji unosite Vaše podatke i u tekstu dajete izjavu.</i></li>
+						<li><i>Svi podaci ostaju anonimne prirode.</i></li>
+					</ul>
+				</span>
+			</div>
+			<p>
+				<label for="id_pol">Pol:</label><br> 
+				<select name="pol" value="Izaberite pol" maxlength="20" required id="id_pol">
+					<option value="Muškarac">Muškarac</option>
+					<option value="Žena">Žena</option>
+				</select>
+				</p>
+			<p>
+				<label for="id_lokacija">Lokacija:</label><br> 
+				<input type="text" name="lokacija" class="form-control" placeholder="Napišite Vašu adresu prebivališta" maxlength="200" required id="id_lokacija">
+			</p>
+			<p>
+				<label for="id_starost">Starost:</label><br> 
+				<input type="number" name="starost" class="form-control" placeholder="Izaberite Vaš broj godina" required id="id_starost">
+			</p>
+			<p>
+				<label for="id_tekst">Tekst:</label><br> 
+				<textarea name="tekst" cols="40" rows="10" class="form-control" maxlength="500" placeholder="Ukratko opišite događaj" required id="id_tekst"></textarea>
+			</p>
+			<div id="submit">
+				<button type="submit">Prijavi!</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+
+{% endblock content %}

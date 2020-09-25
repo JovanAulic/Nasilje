@@ -1,0 +1,56 @@
+*{
+	font-family: 'Garamond', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+#title h1{
+	text-align: center;
+	padding-top: 30px;
+	margin-right: 30px;
+	margin-left: 30px;
+	padding-bottom: 10px;
+	font-size: 40px;
+	color: #4d140c;
+	font-family: "Impact";
+	border-bottom: 1px solid gray;
+}
+#form-control{
+	padding-top: 20px;
+	margin-left: 100px;
+}
+#form-control form p label{
+	text-align: justify left;
+	font-size: 30px;
+}
+#form-control form p input{
+	font-size: 20px;
+}
+#helptext ul{
+	list-style-type: none;
+}
+#helptext ul li{
+	font-size: 25px;
+}
+#helptext2{
+	font-size: 25px;
+}
+#submit{
+	text-align: justify left;
+	margin-left: 180px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#submit button{
+	border: 2px groove black;
+	border-radius: 20px;
+	box-shadow: 5px 5px gray;
+	background-color: #4d140c;
+	padding: 3px;
+	color: white;
+	text-decoration: none;
+	font-size: 30px;
+}
+#submit button:hover{
+	background-color: silver;
+	color: black;
+}

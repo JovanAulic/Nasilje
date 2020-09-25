@@ -1,0 +1,77 @@
+{% extends 'Home.html' %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+	{% if user.id == post.autor.id %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Izijeni Sadržaj Priče</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/Update.css' %}">
+</head>
+<body>
+		<div id="form-group">
+			<form method="POST">
+				<div id="title">
+					<h1>Izmijeni sadržaj Vašeg posta!</h1>
+				</div>
+				{% csrf_token %}
+				<div class="form">
+					<p>
+						<label for="id_naslov">Naslov:</label><br> 
+						{{ form.naslov }}
+					</p>
+					<p>
+						<label for="id_tekst">Tekst:</label><br> 
+						{{ form.tekst }}
+					</p>
+					<p>
+						<label for="id_opis_teksta">Opis teksta:</label><br>
+						{{ form.opis_teksta }}
+					</p>
+				</div>
+				<script type="text/javascript">
+					function funkcija(){
+						alert("Da li ste sigurni da želite izmijeniti sadržaj posta '{{ post.naslov }}'??");
+					}
+				</script>
+				<div class="button">
+					<button type="submit" onclick="funkcija()">Izmijeni!</button>
+				</div>
+			</form>
+		</div>
+</body>
+</html>
+	{% else %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Greška</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'CSS/Identifikacija.css' %}">
+	</head>
+	<body>
+		<div id="else1">
+			<h1>Vaše korisničko ime se ne poklapa sa imenom autora! Nemate mogućnost izmjene sadržaja.</h1>
+		</div>
+	</body>
+	</html>
+	{% endif %}
+	
+{% else %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Greška</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'CSS/else.css' %}">	
+	</head>
+	<body>
+		<div id="else">
+			<h1>Niste prijavljeni. Nemate mogućnost izmjene sadržaja!</h1>
+		</div>
+	</body>
+	</html>
+{% endif %}
+{% endblock content %}
